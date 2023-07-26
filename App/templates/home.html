@@ -13,17 +13,20 @@
             <div class="col col-6">
                 {{ form.last_name|as_crispy_field }}
             </div>
-            <div class="col-6">
+            <div class="col-4">
                 {{ form.email|as_crispy_field }}
             </div>
-            <div class="col-6">
+            <div class="col-4">
                 {{ form.age|as_crispy_field }}
+            </div>
+            <div class="col-4">
+                {{ form.phone|as_crispy_field }}
             </div>
             <div class="col-12">
                 {{ form.messages|as_crispy_field }}
             </div>
         </div>
-        <button type="submit" class="btn btn-success w-25">Submit</button>
+        <button type="submit" class="btn btn-outline-primary" style="width: fit-content;">Submit</button>
     </form>
     
     {% if messages %}

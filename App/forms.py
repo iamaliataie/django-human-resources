@@ -46,4 +46,13 @@ class CandidateForm(forms.ModelForm):
     )
     class Meta:
         model = Candidate
-        fields = ["first_name", "last_name", "email", 'age', "messages"]
+        fields = ["first_name", "last_name", "email", 'age', "phone", "messages"]
+        
+        widgets = {
+            "phone": forms.TextInput(
+                attrs={
+                    'placeholder': 'e.g +93 XXXXXXXXX',
+                    'data-mask': '(+00) 000-000-0000'
+                    }
+                )
+            }
