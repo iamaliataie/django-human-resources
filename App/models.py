@@ -6,6 +6,7 @@ class Candidate(models.Model):
     first_name = models.CharField(max_length=255)
     last_name = models.CharField(max_length=255)
     email = models.EmailField(max_length=255)
+    age = models.IntegerField(default=20,)
     messages = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
     
