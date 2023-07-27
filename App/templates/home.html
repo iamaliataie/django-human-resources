@@ -7,19 +7,22 @@
     <form method="post" class="card p-3 mt-3" novalidate>
         {% csrf_token %}
         <div class="row">
-            <div class="col col-6">
+            <div class="col-12 col-md-4">
                 {{ form.first_name|as_crispy_field }}
             </div>
-            <div class="col col-6">
+            <div class="col-12 col-md-4">
                 {{ form.last_name|as_crispy_field }}
             </div>
-            <div class="col-4">
+            <div class="col-12 col-md-4">
+                {{ form.job|as_crispy_field }}
+            </div>
+            <div class="col-12 col-md-4">
                 {{ form.email|as_crispy_field }}
             </div>
-            <div class="col-4">
+            <div class="col-12 col-md-4">
                 {{ form.age|as_crispy_field }}
             </div>
-            <div class="col-4">
+            <div class="col-12 col-md-4">
                 {{ form.phone|as_crispy_field }}
             </div>
             <div class="col-12">
@@ -34,12 +37,12 @@
             {% for message in messages %}
         
                 {% if message.tags == 'success' %}
-                    <div class="alert alert-primary alert-dismissible fade show" role="alert">
+                    <div class="alert alert-primary alert-dismissible fade show text-center" role="alert">
                         {{ message }}
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
                 {% else %}
-                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                    <div class="alert alert-warning alert-dismissible fade show text-center" role="alert">
                         {{ message }}
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>

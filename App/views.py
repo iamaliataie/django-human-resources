@@ -11,7 +11,7 @@ def home(request):
     if request.method == 'POST':
         if form.is_valid():
             form.save()
-            messages.success(request, "Candidate added successfully")
+            messages.success(request, "Your request was successful")
             return redirect('/')
         else:
             messages.error(request, "Something went wrong, please try again")

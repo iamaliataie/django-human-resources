@@ -2,6 +2,14 @@ from django import forms
 from django.core.validators import RegexValidator, integer_validator
 from .models import Candidate
 
+class Uppercase(forms.CharField):
+    def to_python(self, value):
+        return value.upper()
+
+class Lowercase(forms.CharField):
+    def to_python(self, value):
+        return value.lower()
+
 class CandidateForm(forms.ModelForm):
     
     first_name = forms.CharField(
@@ -23,7 +31,13 @@ class CandidateForm(forms.ModelForm):
                 ],
         widget=forms.TextInput(attrs={'placeholder': 'Last Name'})
     )
-    email = forms.CharField(
+    job = Uppercase(
+        label="Job Code",
+        min_length=5,
+        max_length=5,
+        widget=forms.TextInput(attrs={'placeholder': 'e.g FR-22'})
+    )
+    email = Lowercase(
         label="Email Address",
         max_length=100,
         validators=[
@@ -46,7 +60,7 @@ class CandidateForm(forms.ModelForm):
     )
     class Meta:
         model = Candidate
-        fields = ["first_name", "last_name", "email", 'age', "phone", "messages"]
+        fields = ["first_name", "last_name", "job", "email", 'age', "phone", "messages"]
         
         widgets = {
             "phone": forms.TextInput(
