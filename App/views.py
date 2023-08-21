@@ -3,7 +3,6 @@ from django.contrib import messages
 
 from .forms import CandidateForm
 
-
 def home(request):
     form = CandidateForm(request.POST or None)
     if request.method == 'POST':
