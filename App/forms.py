@@ -11,7 +11,6 @@ class Lowercase(forms.CharField):
         return value.lower()
 
 class CandidateForm(forms.ModelForm):
-    
     first_name = forms.CharField(
         label="First Name",
         max_length=100,
