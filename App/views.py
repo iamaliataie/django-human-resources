@@ -12,8 +12,6 @@ def home(request):
             return redirect('/')
         else:
             messages.error(request, "Something went wrong, please try again")
-    context = {
-        'form': form,
-    }
+    context = {'form': form}
     
     return render(request, "home.html", context)
