@@ -17,7 +17,12 @@ class CandidateForm(forms.ModelForm):
         validators=[
                 RegexValidator(r'^[a-zA-ZÀ-ÿ\s]*$', message='Only letters are allowed'),
                 ],
-        widget=forms.TextInput(attrs={'placeholder': 'First Name'})
+        widget=forms.TextInput(
+            attrs={
+                'placeholder': 'First Name',
+                'style': 'text-transform: capitalize',
+                }
+            )
     )
     last_name = forms.CharField(
         label="Last Name",
@@ -28,13 +33,23 @@ class CandidateForm(forms.ModelForm):
                     message='Only letters are allowed'
                     )
                 ],
-        widget=forms.TextInput(attrs={'placeholder': 'Last Name'})
+        widget=forms.TextInput(
+            attrs={
+                'placeholder': 'Last Name',
+                'style': 'text-transform: capitalize',
+                }
+            )
     )
     job = Uppercase(
         label="Job Code",
         min_length=5,
         max_length=5,
-        widget=forms.TextInput(attrs={'placeholder': 'e.g FR-22'})
+        widget=forms.TextInput(
+            attrs={
+                'placeholder': 'e.g, FR-22',
+                'style': 'text-transform: uppercase',
+                }
+            )
     )
     email = Lowercase(
         label="Email Address",
@@ -45,7 +60,12 @@ class CandidateForm(forms.ModelForm):
                     message='Enter a valid email address'
                     )
                 ],
-        widget=forms.TextInput(attrs={'placeholder': 'Email Address'})
+        widget=forms.TextInput(
+            attrs={
+                'placeholder': 'Email Address',
+                'style': 'text-transform: lowercase',
+                }
+            )
     )
     age = forms.IntegerField(
         label="Age",
