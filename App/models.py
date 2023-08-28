@@ -8,6 +8,20 @@ SITUATION = (
     ('Rejected', 'Rejected'),
 )
 
+PERSONALITY = (
+    ('', 'Select a personality'),
+    ('I am outgoing', 'I am outgoing'),
+    ('I am sociable', 'I am sociable'),
+    ('I am antisocial', 'I am antisocial'),
+    ('I am discreet', 'I am discreet'),
+    ('I am serious', 'I am serious'),
+)
+
+SMOKER = (
+    ('1', 'Yes'),
+    ('2', 'No'),
+)
+
 class Candidate(models.Model):
     first_name = models.CharField(max_length=255)
     last_name = models.CharField(max_length=255)
@@ -15,6 +29,13 @@ class Candidate(models.Model):
     email = models.EmailField(max_length=255)
     age = models.IntegerField(default=20,)
     phone = models.CharField(max_length=25)
+    
+    personality = models.CharField(max_length=50, choices=PERSONALITY, null=True)
+    salary = models.CharField(max_length=50)
+    gender = models.CharField(max_length=10)
+    experience = models.BooleanField(null=True)
+    smoker = models.CharField(max_length=50, choices=SMOKER)
+    
     messages = models.TextField()
     situation = models.CharField(max_length=20, default='Pending', choices=SITUATION, null=True,)
     created_on = models.DateTimeField(auto_now_add=True)
