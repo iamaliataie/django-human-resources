@@ -1,10 +1,13 @@
 from django.contrib import admin
-from .models import Candidate
 from django.utils.html import format_html
+
+from .models import Candidate
+from .forms import CandidateForm
 
 # Register your models here.
 
 class CandidateAdmin(admin.ModelAdmin):
+    form = CandidateForm
     list_filter = ('situation',)
     list_display = ('first_name', 'last_name', 'email', 'created_on', 'status', '_')
     search_fields = ('first_name', 'last_name', 'email', 'age',)
