@@ -1,6 +1,6 @@
 from django import forms
 from django.core.validators import RegexValidator, integer_validator
-from .models import Candidate
+from .models import Candidate, SMOKER
 
 class Uppercase(forms.CharField):
     def to_python(self, value):
@@ -52,6 +52,9 @@ class CandidateForm(forms.ModelForm):
         min_value=20,
         widget=forms.NumberInput(attrs={'placeholder': 'Age'})
     )
+    
+    experience = forms.BooleanField(label='I have experience', required=False)
+    
     messages = forms.CharField(
         label="About You",
         max_length=255,
@@ -70,6 +73,11 @@ class CandidateForm(forms.ModelForm):
             ('Between  ($7000 and $10000)', 'Between  ($7000 and $10000)'),
         )
         
+        GENDER = (
+            ('M', 'Male'),
+            ('F', 'Female'),
+        )
+        
         widgets = {
             "phone": forms.TextInput(
                 attrs={
@@ -78,4 +86,6 @@ class CandidateForm(forms.ModelForm):
                     }
                 ),
             "salary": forms.Select(choices=SALARY),
+            "gender": forms.RadioSelect(choices=GENDER),
+            "smoker": forms.RadioSelect(choices=SMOKER),
             }
