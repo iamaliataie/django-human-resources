@@ -59,7 +59,16 @@ class CandidateForm(forms.ModelForm):
     )
     class Meta:
         model = Candidate
-        fields = ["first_name", "last_name", "job", "email", 'age', "phone", "messages"]
+        # fields = ["first_name", "last_name", "job", "email", 'age', "phone", "messages"]
+        exclude = ('situation', 'created_on')
+        
+        SALARY = (
+            ('', 'Salary expectation (month)'),
+            ('Between  ($3000 and $4000)', 'Between  ($3000 and $4000)'),
+            ('Between  ($4000 and $5000)', 'Between  ($4000 and $5000)'),
+            ('Between  ($5000 and $7000)', 'Between  ($5000 and $7000)'),
+            ('Between  ($7000 and $10000)', 'Between  ($7000 and $10000)'),
+        )
         
         widgets = {
             "phone": forms.TextInput(
@@ -67,5 +76,6 @@ class CandidateForm(forms.ModelForm):
                     'placeholder': 'e.g +93 XXXXXXXXX',
                     'data-mask': '(+00) 000-000-0000'
                     }
-                )
+                ),
+            "salary": forms.Select(choices=SALARY),
             }
