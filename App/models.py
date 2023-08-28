@@ -35,7 +35,7 @@ class Candidate(models.Model):
     gender = models.CharField(max_length=10)
     experience = models.BooleanField(null=True)
     smoker = models.CharField(max_length=50, choices=SMOKER, default="2")
-    
+    resume = models.FileField()
     messages = models.TextField()
     situation = models.CharField(max_length=20, default='Pending', choices=SITUATION, null=True,)
     created_on = models.DateTimeField(auto_now_add=True)
