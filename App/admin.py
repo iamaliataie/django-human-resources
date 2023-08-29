@@ -1,4 +1,6 @@
+from typing import Any, Callable, Optional, Sequence, Union
 from django.contrib import admin
+from django.http.request import HttpRequest
 from django.utils.html import format_html
 
 from .models import Candidate
@@ -32,8 +34,16 @@ class CandidateAdmin(admin.ModelAdmin):
         )
     exclude = ('status',)
     list_filter = ('situation',)
-    list_display = ('first_name', 'last_name', 'email', 'created_on', 'status', '_')
+    list_display = ('name', 'email', 'created_on', 'status', '_')
     search_fields = ('first_name', 'last_name', 'email', 'age',)
+    
+    
+    def get_fields(self, request, obj=None):
+        fields = super().get_fields(request, obj)
+        if obj:
+            fields.remove('first_name')
+            fields.remove('last_name')
+        return fields
     
     # function to change the icon for the status of the candidate
     def _(self, obj):
