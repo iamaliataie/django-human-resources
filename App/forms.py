@@ -11,6 +11,7 @@ class Lowercase(forms.CharField):
         return value.lower()
 
 class CandidateForm(forms.ModelForm):
+    
     first_name = forms.CharField(
         label="First Name",
         max_length=100,
@@ -110,3 +111,9 @@ class CandidateForm(forms.ModelForm):
             "gender": forms.RadioSelect(choices=GENDER),
             "smoker": forms.RadioSelect(choices=SMOKER),
             }
+
+    def clean_email(self):
+        email = self.cleaned_data.get('email')
+        if Candidate.objects.filter(email=email).exists():
+            raise forms.ValidationError('Email already exists')
+        return email
