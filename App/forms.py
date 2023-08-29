@@ -70,7 +70,6 @@ class CandidateForm(forms.ModelForm):
     )
     age = forms.IntegerField(
         label="Age",
-        min_value=20,
         widget=forms.NumberInput(attrs={'placeholder': 'Age'})
     )
     
@@ -117,3 +116,9 @@ class CandidateForm(forms.ModelForm):
         if Candidate.objects.filter(email=email).exists():
             raise forms.ValidationError('Email already exists')
         return email
+    
+    def clean_age(self):
+        age = int(self.cleaned_data.get('age'))
+        if age < 20 or age > 50:
+            raise forms.ValidationError('Age must be between 20 and 50')
+        return age
