@@ -23,7 +23,6 @@ SMOKER = (
     ('2', 'No'),
 )
 
-
 LANGUAGES = (
     ('Python', 'Python'),
     ('Javascript', 'Javascript'),
