@@ -1,6 +1,4 @@
-from typing import Any, Callable, Optional, Sequence, Union
 from django.contrib import admin
-from django.http.request import HttpRequest
 from django.utils.html import format_html
 
 from .models import Candidate
