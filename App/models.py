@@ -1,4 +1,5 @@
 from django.db import models
+from multiselectfield import MultiSelectField
 
 # Create your models here.
 
@@ -22,6 +23,62 @@ SMOKER = (
     ('2', 'No'),
 )
 
+
+LANGUAGES = (
+    ('Python', 'Python'),
+    ('Javascript', 'Javascript'),
+    ('C++', 'C++'),
+    ('PHP', 'PHP'),
+    ('Ruby', 'Ruby'),
+    ('Other', 'Other'),
+    )
+
+FRAMEWORKS = (
+    ('React', 'React'),
+    ('Vue', 'Vue'),
+    ('Django', 'Django'),
+    ('Laravel', 'Laravel'),
+    ('RubyOnRails', 'RubyOnRails'),
+    ('Other', 'Other'),
+    )
+
+DATABASES = (
+    ('Mysql', 'Mysql'),
+    ('Posgresql', 'Posgresql'),
+    ('Mangodb', 'Mangodb'),
+    ('Sqlite3', 'Sqlite3'),
+    ('Oracle', 'Oracle'),
+    ('Other', 'Other'),
+)
+
+LIBRARIES = (
+    ('Jquery', 'Jquery'),
+    ('Chart.js', 'Chart.js'),
+    ('Gsap', 'Gsap'),
+    ('Graphql', 'Graphql'),
+    ('Matplotlib', 'Matplotlib'),
+    ('Other', 'Other'),
+)
+
+MOBILE = (
+    ('React Native', 'React Native'),
+    ('Kivy', 'Kivy'),
+    ('Flutter', 'Flutter'),
+    ('Ionic', 'Ionic'),
+    ('Xamarin', 'Xamarin'),
+    ('Other', 'Other'),
+)
+
+OTHER = (
+    ('UML', 'UML'),
+    ('SQL', 'SQL'),
+    ('Docker', 'Docker'),
+    ('GIT', 'GIT'),
+    ('Pandas', 'Pandas'),
+    ('Other', 'Other'),
+)
+
+
 class Candidate(models.Model):
     first_name = models.CharField(max_length=255)
     last_name = models.CharField(max_length=255)
@@ -37,6 +94,14 @@ class Candidate(models.Model):
     smoker = models.CharField(max_length=50, choices=SMOKER, default="2")
     resume = models.FileField()
     messages = models.TextField()
+    
+    languages = MultiSelectField(choices=LANGUAGES, default='', max_length=20)
+    frameworks = MultiSelectField(choices=FRAMEWORKS, default='', max_length=20)
+    databases = MultiSelectField(choices=DATABASES, default='', max_length=20)
+    libraries = MultiSelectField(choices=LIBRARIES, default='', max_length=20)
+    mobile = MultiSelectField(choices=MOBILE, default='', max_length=20)
+    other = MultiSelectField(choices=OTHER, default='', max_length=20)
+    
     situation = models.CharField(max_length=20, default='Pending', choices=SITUATION, null=True,)
     created_on = models.DateTimeField(auto_now_add=True)
     
