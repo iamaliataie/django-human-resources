@@ -92,7 +92,6 @@ class Candidate(models.Model):
     smoker = models.CharField(max_length=50, choices=SMOKER, default="2")
     resume = models.FileField()
     messages = models.TextField()
-    
     languages = MultiSelectField(choices=LANGUAGES, default='', max_length=20)
     frameworks = MultiSelectField(choices=FRAMEWORKS, default='', max_length=20)
     databases = MultiSelectField(choices=DATABASES, default='', max_length=20)
