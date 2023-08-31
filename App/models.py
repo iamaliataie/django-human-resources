@@ -85,7 +85,6 @@ class Candidate(models.Model):
     email = models.EmailField(max_length=255)
     age = models.IntegerField(default=20,)
     phone = models.CharField(max_length=25)
-    
     personality = models.CharField(max_length=50, choices=PERSONALITY, null=True)
     salary = models.CharField(max_length=50)
     gender = models.CharField(max_length=10)

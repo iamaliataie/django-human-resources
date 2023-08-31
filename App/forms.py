@@ -24,7 +24,7 @@ class CandidateForm(forms.ModelForm):
                 'style': 'text-transform: capitalize',
                 }
             )
-    )
+        )
     
     last_name = forms.CharField(
         label="Last Name",
