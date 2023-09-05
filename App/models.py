@@ -108,6 +108,5 @@ class Candidate(models.Model):
         self.first_name = self.first_name.capitalize()
         self.last_name = self.last_name.capitalize()
         
-    
     def name(self):
         return self.first_name + ' ' + self.last_name
