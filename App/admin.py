@@ -29,6 +29,7 @@ class CandidateAdmin(admin.ModelAdmin):
         'libraries',
         'mobile',
         'other',
+        
         )
     exclude = ('status',)
     list_filter = ('situation',)
@@ -61,7 +62,7 @@ class CandidateAdmin(admin.ModelAdmin):
             color = 'red'
         else:
             color = 'orange'
-        
+
         return format_html('<strong style="color:{}">{}</strong'.format(color, obj.situation))
 
 admin.site.register(Candidate, CandidateAdmin)
