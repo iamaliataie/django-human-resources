@@ -13,9 +13,7 @@ def home(request):
         else:
             messages.error(request, "Something went wrong, please try again")
         context = {'form': form}
-        
         return render(request, "home.html", context)
-    
     else:
         form = CandidateForm()
         return render(request, "home.html", {'form': form})
