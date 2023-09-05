@@ -25,7 +25,6 @@ class CandidateForm(forms.ModelForm):
                 }
             )
         )
-    
     last_name = forms.CharField(
         label="Last Name",
         max_length=100,
@@ -41,8 +40,7 @@ class CandidateForm(forms.ModelForm):
                 'style': 'text-transform: capitalize',
                 }
             )
-    )
-    
+        )
     job = Uppercase(
         label="Job Code",
         min_length=5,
@@ -54,7 +52,6 @@ class CandidateForm(forms.ModelForm):
                 }
             )
     )
-    
     email = Lowercase(
         label="Email Address",
         max_length=100,
@@ -71,14 +68,11 @@ class CandidateForm(forms.ModelForm):
                 }
             )
     )
-    
     age = forms.IntegerField(
         label="Age",
         widget=forms.NumberInput(attrs={'placeholder': 'Age'})
     )
-    
     experience = forms.BooleanField(label='I have experience', required=False)
-    
     messages = forms.CharField(
         label="About You",
         min_length=50,
