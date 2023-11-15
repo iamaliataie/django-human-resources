@@ -13,7 +13,6 @@ class CandidateAdmin(admin.ModelAdmin):
         'first_name',
         'last_name',
         'email',
-        'age',
         'job',
         'personality',
         'experience',
@@ -33,7 +32,7 @@ class CandidateAdmin(admin.ModelAdmin):
     exclude = ('status',)
     list_filter = ('situation',)
     list_display = ('name', 'email', 'created_on', 'status', '_')
-    search_fields = ('first_name', 'last_name', 'email', 'age',)
+    search_fields = ('first_name', 'last_name', 'email',)
     
     def get_fields(self, request, obj=None):
         fields = super().get_fields(request, obj)
