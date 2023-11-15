@@ -117,6 +117,7 @@ class Candidate(models.Model):
     # PROFESSIONAL - 4
     company = models.CharField(max_length=100)
     position = models.CharField(max_length=50)
+    started_job = models.DateField(auto_now=False, auto_now_add=False)
 
     other = MultiSelectField(choices=OTHER, default='', max_length=20)
     situation = models.CharField(max_length=20, default='Pending', choices=SITUATION, null=True,)
