@@ -76,6 +76,13 @@ OTHER = (
     ('Pandas', 'Pandas'),
     ('Other', 'Other'),
 )
+ 
+STATUS_COURSE = (
+    ('', 'Select your status'),
+    ('I am studying','I am studying'),
+    ('I took a break','I took a break'),
+    ('Completed','Completed'),
+)
 
 
 class Candidate(models.Model):
