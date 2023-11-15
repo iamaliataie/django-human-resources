@@ -119,6 +119,8 @@ class Candidate(models.Model):
     position = models.CharField(max_length=50)
     started_job = models.DateField(auto_now=False, auto_now_add=False)
     finished_job = models.DateField(auto_now=False, auto_now_add=False)
+    about_job = models.TextField()
+    
 
     other = MultiSelectField(choices=OTHER, default='', max_length=20)
     situation = models.CharField(max_length=20, default='Pending', choices=SITUATION, null=True,)
