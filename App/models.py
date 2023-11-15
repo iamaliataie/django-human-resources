@@ -120,6 +120,7 @@ class Candidate(models.Model):
     started_job = models.DateField(auto_now=False, auto_now_add=False)
     finished_job = models.DateField(auto_now=False, auto_now_add=False)
     about_job = models.TextField()
+    employed = models.BooleanField(null=True, verbose_name="I am employed")
     
 
     other = MultiSelectField(choices=OTHER, default='', max_length=20)
