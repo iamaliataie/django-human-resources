@@ -122,6 +122,7 @@ class Candidate(models.Model):
     about_job = models.TextField()
     employed = models.BooleanField(null=True, verbose_name="I am employed")
     remote = models.BooleanField(null=True, verbose_name="I agree to work remotely")
+    travel = models.BooleanField(null=True, verbose_name="I am available to travel")
 
     other = MultiSelectField(choices=OTHER, default='', max_length=20)
     situation = models.CharField(max_length=20, default='Pending', choices=SITUATION, null=True,)
