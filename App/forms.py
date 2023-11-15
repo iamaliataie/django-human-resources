@@ -68,10 +68,10 @@ class CandidateForm(forms.ModelForm):
                 }
             )
     )
-    age = forms.IntegerField(
-        label="Age",
-        widget=forms.NumberInput(attrs={'placeholder': 'Age'})
-    )
+    # age = forms.IntegerField(
+    #     label="Age",
+    #     widget=forms.NumberInput(attrs={'placeholder': 'Age'})
+    # )
     experience = forms.BooleanField(label='I have experience', required=False)
     messages = forms.CharField(
         label="About You",
@@ -98,6 +98,13 @@ class CandidateForm(forms.ModelForm):
         )
         
         widgets = {
+            "birth":forms.DateInput(
+                attrs={
+                    'style': 'font-size: 13px; cursor: pointer;',
+                    'type': 'date',
+                    'onkeypress': 'return false;',
+                }
+            ),
             "phone": forms.TextInput(
                 attrs={
                     'placeholder': 'e.g +93 XXXXXXXXX',
