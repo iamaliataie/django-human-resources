@@ -114,6 +114,9 @@ class Candidate(models.Model):
     about_course = models.TextField()
     status_course = models.CharField(max_length=50, null=True, choices=STATUS_COURSE)
 
+    # PROFESSIONAL - 4
+    company = models.CharField(max_length=100)
+
     other = MultiSelectField(choices=OTHER, default='', max_length=20)
     situation = models.CharField(max_length=20, default='Pending', choices=SITUATION, null=True,)
     created_on = models.DateTimeField(auto_now_add=True)
