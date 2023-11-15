@@ -98,6 +98,10 @@ class Candidate(models.Model):
     databases = MultiSelectField(choices=DATABASES, default='', max_length=20)
     libraries = MultiSelectField(choices=LIBRARIES, default='', max_length=20)
     mobile = MultiSelectField(choices=MOBILE, default='', max_length=20)
+
+    # EDUCATION - 3
+    institution = models.CharField(max_length=50)
+
     other = MultiSelectField(choices=OTHER, default='', max_length=20)
     situation = models.CharField(max_length=20, default='Pending', choices=SITUATION, null=True,)
     created_on = models.DateTimeField(auto_now_add=True)
