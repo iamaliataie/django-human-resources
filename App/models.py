@@ -104,6 +104,7 @@ class Candidate(models.Model):
     course = models.CharField(max_length=50)
     started_course = models.DateField(auto_now_add=False, auto_now=False)
     finished_course = models.DateField(auto_now_add=False, auto_now=False)
+    about_course = models.TextField()
     
 
     other = MultiSelectField(choices=OTHER, default='', max_length=20)
