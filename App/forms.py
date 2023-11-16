@@ -79,6 +79,18 @@ class CandidateForm(forms.ModelForm):
         max_length=1000,
         widget=forms.Textarea(attrs={'placeholder': 'Talk a little about yourself', 'rows': 6, 'style': 'resize:none'})
     )
+
+    resume = forms.FileField(
+        label="Resume",
+        widget=forms.ClearableFileInput(
+            attrs={
+                'style': 'font-size: 13px',
+            }
+        )
+    )
+
+
+
     class Meta:
         model = Candidate
         # fields = ["first_name", "last_name", "job", "email", 'age', "phone", "messages"]
