@@ -1,6 +1,9 @@
+from datetime import date
 from django import forms
 from django.core.validators import RegexValidator, integer_validator
 from .models import Candidate, SMOKER
+
+
 
 class Uppercase(forms.CharField):
     def to_python(self, value):
@@ -143,6 +146,15 @@ class CandidateForm(forms.ModelForm):
                     'onkeypress': 'return false;',
                     'min': '1950-01-01',
                     'max': '2003-01-01',
+                }
+            ),
+            "started_course":forms.DateInput(
+                attrs={
+                    'style': 'font-size: 13px; cursor: pointer;',
+                    'type': 'date',
+                    'onkeypress': 'return false;',
+                    'min': '1950-01-01',
+                    'max': date.today(),
                 }
             ),
             "phone": forms.TextInput(
