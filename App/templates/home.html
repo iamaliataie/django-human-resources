@@ -106,6 +106,21 @@
                 <div class="col-3">{{ form.status_course|as_crispy_field }}</div>
             </div>
         </div>
+        <div class="card p-3 mt-3  border border-2 border-dark">
+            <div class="bg-secondary text-white text-center py-2  mb-3">
+                PROFESSIONAL
+            </div>
+            <div class="row">
+                <div class="col-3">{{ form.company|as_crispy_field }}</div>
+                <div class="col-3">{{ form.position|as_crispy_field }}</div>
+                <div class="col-3">{{ form.started_job|as_crispy_field }}</div>
+                <div class="col-3">{{ form.finished_job|as_crispy_field }}</div>
+            </div>
+            {{ form.about_course|as_crispy_field }}
+            <div class="row">
+                <div class="col-3">{{ form.status_course|as_crispy_field }}</div>
+            </div>
+        </div>
         <button type="submit" class="btn btn-outline-primary mt-3" style="width: fit-content;">Submit</button>
     </form>
         
