@@ -102,6 +102,7 @@
                 <div class="col-3">{{ form.finished_course|as_crispy_field }}</div>
             </div>
             {{ form.about_course|as_crispy_field }}
+            <hr>
             <div class="row">
                 <div class="col-3">{{ form.status_course|as_crispy_field }}</div>
             </div>
@@ -116,9 +117,12 @@
                 <div class="col-3">{{ form.started_job|as_crispy_field }}</div>
                 <div class="col-3">{{ form.finished_job|as_crispy_field }}</div>
             </div>
-            {{ form.about_course|as_crispy_field }}
+            {{ form.about_job|as_crispy_field }}
+            <hr>
             <div class="row">
-                <div class="col-3">{{ form.status_course|as_crispy_field }}</div>
+                <div class="col-3">{{ form.employed|as_crispy_field }}</div>
+                <div class="col-3">{{ form.remote|as_crispy_field }}</div>
+                <div class="col-3">{{ form.travel|as_crispy_field }}</div>
             </div>
         </div>
         <button type="submit" class="btn btn-outline-primary mt-3" style="width: fit-content;">Submit</button>
