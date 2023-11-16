@@ -105,6 +105,15 @@ class CandidateForm(forms.ModelForm):
             }
         )
     )
+    course = forms.CharField(
+        label="Course",
+        widget=forms.TextInput(
+            attrs={
+                'style': 'font-size: 13px',
+                'placeholder': 'College name',
+            }
+        )
+    )
 
 
 
