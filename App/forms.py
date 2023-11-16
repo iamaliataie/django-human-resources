@@ -157,6 +157,13 @@ class CandidateForm(forms.ModelForm):
                     'max': date.today(),
                 }
             ),
+            "finished_course":forms.DateInput(
+                attrs={
+                    'style': 'font-size: 13px; cursor: pointer;',
+                    'type': 'date',
+                    'onkeypress': 'return false;',
+                }
+            ),
             "phone": forms.TextInput(
                 attrs={
                     'placeholder': 'e.g +93 XXXXXXXXX',
