@@ -96,6 +96,15 @@ class CandidateForm(forms.ModelForm):
             }
         )
     )
+    institution = forms.CharField(
+        label="Institution",
+        widget=forms.TextInput(
+            attrs={
+                'style': 'font-size: 13px',
+                'placeholder': 'Institution name',
+            }
+        )
+    )
 
 
 
