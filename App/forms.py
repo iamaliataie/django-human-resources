@@ -130,6 +130,17 @@ class CandidateForm(forms.ModelForm):
             }
         )
     )
+    about_job = forms.CharField(
+        label="About your job",
+        widget=forms.Textarea(
+            attrs={
+                'style': 'font-size: 13px',
+                'placeholder': 'Talk about your job',
+                'rows': 7,
+                'style': 'resize: none;',
+            }
+        )
+    )
 
 
 
