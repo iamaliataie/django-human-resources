@@ -153,6 +153,14 @@ class CandidateForm(forms.ModelForm):
             }
         )
     )
+    position = forms.CharField(
+        widget=forms.TextInput(
+            attrs={
+                'style': 'font-size: 13px',
+                'placeholder': 'Your position',
+            }
+        )
+    )
 
 
     class Meta:
