@@ -196,7 +196,7 @@ class CandidateForm(forms.ModelForm):
                     'type': 'date',
                     'onkeypress': 'return false;',
                     'min': '1950-01-01',
-                    'max': '2003-01-01',
+                    'max': f'{date.today().year-20}-{date.today().month}-{date.today().day}',
                 }
             ),
             "started_course":forms.DateInput(
@@ -259,3 +259,12 @@ class CandidateForm(forms.ModelForm):
         if resume.content_type != 'application/pdf':
             raise forms.ValidationError('Resume must be PDF')
         return resume
+
+    def clean_birth(self):
+        birth = self.cleaned_data.get('birth')
+        now = date.today()
+        age = (now.year - birth.year) - ((now.month, now.day) < (birth.month, birth.day))
+
+        if age < 20:
+            raise forms.ValidationError('Your age must be 20 at least')
+        return birth
