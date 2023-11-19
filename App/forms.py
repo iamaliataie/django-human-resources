@@ -124,6 +124,12 @@ class CandidateForm(forms.ModelForm):
         model = Candidate
         # fields = ["first_name", "last_name", "job", "email", 'age', "phone", "messages"]
         exclude = ('situation', 'created_on')
+        labels = {
+            'started_course': 'Started',
+            'finished_course': 'Finished',
+            'started_job': 'Started',
+            'finished_job': 'Finished',
+        }
         
         SALARY = (
             ('', 'Salary expectation (month)'),
