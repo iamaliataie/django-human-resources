@@ -213,6 +213,8 @@ class CandidateForm(forms.ModelForm):
                     'style': 'font-size: 13px; cursor: pointer;',
                     'type': 'date',
                     'onkeypress': 'return false;',
+                    'min': '1950-01-01',
+                    'max': date.today(),
                 }
             ),
             "started_job":forms.DateInput(
