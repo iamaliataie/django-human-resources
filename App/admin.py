@@ -41,6 +41,7 @@ class CandidateAdmin(admin.ModelAdmin):
         'started_job',
         'finished_job',
         'about_job',
+        'employed',
         )
     exclude = ('status',)
     list_filter = ('situation',)
