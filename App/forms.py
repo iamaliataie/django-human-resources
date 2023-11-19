@@ -137,7 +137,7 @@ class CandidateForm(forms.ModelForm):
         widget=forms.Textarea(
             attrs={
                 'style': 'font-size: 13px',
-                'placeholder': 'Talk about your job',
+                'placeholder': 'Talk about your last job',
                 'rows': 7,
                 'style': 'resize: none;',
             }
