@@ -37,6 +37,7 @@ class CandidateAdmin(admin.ModelAdmin):
 
     fieldsets = [
         ('PERSONAL', {'fields': ['email', 'phone', 'gender',]}),
+        ('Skills', {'fields': ['languages', 'frameworks', 'databases', 'libraries', 'mobile',]}),
     ]
 
     def get_fields(self, request, obj=None):
