@@ -14,11 +14,12 @@ class CandidateAdmin(admin.ModelAdmin):
         'last_name',
         'email',
         'job',
-        'personality',
-        'experience',
+        'birth',
         'phone',
+        'personality',
         'salary',
         'gender',
+        'experience',
         'smoker',
         'resume',
         'messages',
@@ -36,7 +37,7 @@ class CandidateAdmin(admin.ModelAdmin):
     
 
     fieldsets = [
-        ('PERSONAL', {'fields': ['first_name', 'last_name' ,'email', 'phone', 'gender',]}),
+        ('PERSONAL', {'fields': ['first_name', 'last_name', 'birth' ,'email', 'phone', 'gender', 'personality', 'smoker', 'image', 'messages',]}),
         ('Skills', {'fields': ['languages', 'frameworks', 'databases', 'libraries', 'mobile', 'other',]}),
         ('Education', {'fields': ['institution', 'course', 'started_course', 'finished_course', 'about_course', 'status_course',]}),
         ('Professional', {'fields': ['company', 'position', 'started_job', 'finished_job', 'about_job', 'employed', 'remote', 'travel',]}),
