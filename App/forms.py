@@ -117,6 +117,17 @@ class CandidateForm(forms.ModelForm):
             }
         )
     )
+    about_course = forms.CharField(
+        label="About your college course",
+        widget=forms.Textarea(
+            attrs={
+                'style': 'font-size: 13px',
+                'placeholder': 'Talk about your college course',
+                'rows': 7,
+                'style': 'resize: none;',
+            }
+        )
+    )
 
 
 
