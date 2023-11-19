@@ -161,7 +161,7 @@ class CandidateForm(forms.ModelForm):
             }
         )
     )
-
+    employed = forms.BooleanField(label="I am employed", required=False)
 
     class Meta:
         model = Candidate
