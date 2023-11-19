@@ -230,7 +230,9 @@ class CandidateForm(forms.ModelForm):
                 attrs={
                     'style': 'font-size: 13px; cursor: pointer;',
                     'type': 'date',
-                    'onkeypress': 'return false;',
+                    'onkeypress': 'return false;',                    
+                    'min': '1950-01-01',
+                    'max': date.today(),
                 }
             ),
             "phone": forms.TextInput(
