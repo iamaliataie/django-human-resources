@@ -22,6 +22,7 @@ class CandidateAdmin(admin.ModelAdmin):
         'experience',
         'smoker',
         'resume',
+        'image',
         'messages',
         'languages',
         'frameworks',
