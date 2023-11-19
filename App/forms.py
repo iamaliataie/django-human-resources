@@ -253,3 +253,9 @@ class CandidateForm(forms.ModelForm):
         if age < 20 or age > 50:
             raise forms.ValidationError('Age must be between 20 and 50')
         return age
+    
+    def clean_resume(self):
+        resume = self.cleaned_data.get('resume')
+        if resume.content_type != 'application/pdf':
+            raise forms.ValidationError('Resume must be PDF')
+        return resume
