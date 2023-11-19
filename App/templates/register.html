@@ -1,0 +1,133 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+<div class="container mt-5" style="width: 95%;">
+    
+    {% if messages %}
+        <div class="my-3">
+            {% for message in messages %}
+        
+                {% if message.tags == 'success' %}
+                    <div class="alert alert-primary alert-dismissible fade show text-center" role="alert">
+                        {{ message }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                {% else %}
+                    <div class="alert alert-warning alert-dismissible fade show text-center" role="alert">
+                        {{ message }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                {% endif %}
+
+            {% endfor %}
+        </div>
+    {% endif %}
+
+    <form method="post" enctype="multipart/form-data" class="mt-3" novalidate>
+        {% csrf_token %}
+        <div class="card p-3 border border-2 border-dark">
+            <div class="bg-secondary text-white text-center py-2 mb-3">
+                ENTER YOUR INFORMATION
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-4">
+                    {{ form.first_name|as_crispy_field }}
+                </div>
+                <div class="col-12 col-md-4">
+                    {{ form.last_name|as_crispy_field }}
+                </div>
+                <div class="col-12 col-md-4">
+                    {{ form.job|as_crispy_field }}
+                </div>
+                <div class="col-12 col-md-4">
+                    {{ form.email|as_crispy_field }}
+                </div>
+                <div class="col-12 col-md-4">
+                    {{ form.birth|as_crispy_field }}
+                </div>
+                <div class="col-12 col-md-4">
+                    {{ form.phone|as_crispy_field }}
+                </div>
+                <hr>
+                <div class="col-12 col-md-4">
+                    {{ form.personality|as_crispy_field }}
+                </div>
+                <div class="col-12 col-md-4">
+                    {{ form.salary|as_crispy_field }}
+                </div>
+                <div class="col-12 col-md-2">
+                    {{ form.gender|as_crispy_field }}
+                </div>
+                <div class="col-12 col-md-2">
+                    {{ form.smoker|as_crispy_field }}
+                </div>
+                <div class="col-12">
+                    {{ form.experience|as_crispy_field }}
+                </div>
+                <hr>
+                <div class="col-12">
+                    {{ form.messages|as_crispy_field }}
+                </div>
+                <div class="col-12">
+                    {{ form.resume|as_crispy_field }}
+                </div>
+                <div class="col-12">
+                    {{ form.image|as_crispy_field }}
+                </div>
+            </div>
+        </div>
+        <div class="card p-3 mt-3  border border-2 border-dark">
+            <div class="bg-secondary text-white text-center py-2  mb-3">
+                MARK YOUR SKILLS
+            </div>
+            <div class="row">
+                <div class="col-2">{{ form.languages|as_crispy_field }}</div>
+                <div class="col-2">{{ form.frameworks|as_crispy_field }}</div>
+                <div class="col-2">{{ form.databases|as_crispy_field }}</div>
+                <div class="col-2">{{ form.libraries|as_crispy_field }}</div>
+                <div class="col-2">{{ form.mobile|as_crispy_field }}</div>
+                <div class="col-2">{{ form.other|as_crispy_field }}</div>
+            </div>
+        </div>
+        <div class="card p-3 mt-3  border border-2 border-dark">
+            <div class="bg-secondary text-white text-center py-2  mb-3">
+                EDUCATION
+            </div>
+            <div class="row">
+                <div class="col-3">{{ form.institution|as_crispy_field }}</div>
+                <div class="col-3">{{ form.course|as_crispy_field }}</div>
+                <div class="col-3">{{ form.started_course|as_crispy_field }}</div>
+                <div class="col-3">{{ form.finished_course|as_crispy_field }}</div>
+            </div>
+            {{ form.about_course|as_crispy_field }}
+            <hr>
+            <div class="row">
+                <div class="col-3">{{ form.status_course|as_crispy_field }}</div>
+            </div>
+        </div>
+        <div class="card p-3 mt-3  border border-2 border-dark">
+            <div class="bg-secondary text-white text-center py-2  mb-3">
+                PROFESSIONAL
+            </div>
+            <div class="row">
+                <div class="col-3">{{ form.company|as_crispy_field }}</div>
+                <div class="col-3">{{ form.position|as_crispy_field }}</div>
+                <div class="col-3">{{ form.started_job|as_crispy_field }}</div>
+                <div class="col-3">{{ form.finished_job|as_crispy_field }}</div>
+            </div>
+            {{ form.about_job|as_crispy_field }}
+            <hr>
+            <div class="row">
+                <div class="col-3">{{ form.employed|as_crispy_field }}</div>
+                <div class="col-3">{{ form.remote|as_crispy_field }}</div>
+                <div class="col-3">{{ form.travel|as_crispy_field }}</div>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary mt-3" style="width: fit-content;">Submit</button>
+        <a class="btn btn-secondary mt-3" style="width: fit-content;">Reset</a>
+    </form>
+        
+</div>
+{% endblock %}
