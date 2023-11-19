@@ -52,11 +52,11 @@ class CandidateAdmin(admin.ModelAdmin):
     
 
     fieldsets = [
-        ('PERSONAL', {'fields': ['first_name', 'last_name', 'birth' ,'email', 'phone', 'gender', 'personality', 'smoker', 'image', 'resume', 'messages',]}),
+        ('PERSONAL', {'fields': ['first_name', 'last_name', 'birth' ,'email', 'phone', 'gender', 'job', 'personality', 'smoker', 'image', 'resume', 'messages',]}),
         ('Skills', {'fields': ['languages', 'frameworks', 'databases', 'libraries', 'mobile', 'other',]}),
         ('Education', {'fields': ['institution', 'course', 'started_course', 'finished_course', 'about_course', 'status_course',]}),
         ('Professional', {'fields': ['company', 'position', 'started_job', 'finished_job', 'about_job', 'employed', 'remote', 'travel',]}),
-        ('HR', {'fields': ['situation']}),
+        ('HR', {'fields': ['situation',]}),
     ]
 
     def get_fields(self, request, obj=None):
