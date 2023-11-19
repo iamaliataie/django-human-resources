@@ -30,6 +30,7 @@ class CandidateAdmin(admin.ModelAdmin):
         'libraries',
         'mobile',
         'other',
+        'institution',
         )
     exclude = ('status',)
     list_filter = ('situation',)
