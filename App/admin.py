@@ -32,6 +32,7 @@ class CandidateAdmin(admin.ModelAdmin):
         'other',
         'institution',
         'course',
+        'started_course',
         )
     exclude = ('status',)
     list_filter = ('situation',)
