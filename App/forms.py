@@ -119,6 +119,8 @@ class CandidateForm(forms.ModelForm):
     )
     about_course = forms.CharField(
         label="About your college course",
+        min_length=50,
+        max_length=1000,
         widget=forms.Textarea(
             attrs={
                 'style': 'font-size: 13px',
