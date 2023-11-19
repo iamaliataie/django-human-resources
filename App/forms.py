@@ -162,6 +162,7 @@ class CandidateForm(forms.ModelForm):
         )
     )
     employed = forms.BooleanField(label="I am employed", required=False)
+    remote = forms.BooleanField(label="I agree to work remotely", required=False)
 
     class Meta:
         model = Candidate
