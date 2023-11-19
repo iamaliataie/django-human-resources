@@ -34,6 +34,7 @@ class CandidateAdmin(admin.ModelAdmin):
         'course',
         'started_course',
         'finished_course',
+        'about_course',
         )
     exclude = ('status',)
     list_filter = ('situation',)
