@@ -43,6 +43,7 @@ class CandidateAdmin(admin.ModelAdmin):
         'about_job',
         'employed',
         'remote',
+        'travel',
         )
     exclude = ('status',)
     list_filter = ('situation',)
