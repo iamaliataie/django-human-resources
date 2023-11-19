@@ -34,6 +34,11 @@ class CandidateAdmin(admin.ModelAdmin):
     list_display = ('name', 'email', 'created_on', 'status', '_')
     search_fields = ('first_name', 'last_name', 'email',)
     
+
+    fieldsets = [
+        ('PERSONAL', {'fields': ['email', 'phone', 'gender',]}),
+    ]
+
     def get_fields(self, request, obj=None):
         fields = super().get_fields(request, obj)
         if obj:
