@@ -132,6 +132,8 @@ class CandidateForm(forms.ModelForm):
     )
     about_job = forms.CharField(
         label="About your job",
+        min_length=50,
+        max_length=1000,
         widget=forms.Textarea(
             attrs={
                 'style': 'font-size: 13px',
