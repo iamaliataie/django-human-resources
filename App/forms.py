@@ -144,6 +144,15 @@ class CandidateForm(forms.ModelForm):
         )
     )
 
+    company = forms.CharField(
+        label="Last company",
+        widget=forms.TextInput(
+            attrs={
+                'style': 'font-size: 13px',
+                'placeholder': 'Company name',
+            }
+        )
+    )
 
 
     class Meta:
