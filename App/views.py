@@ -20,3 +20,6 @@ def register(request):
     else:
         form = CandidateForm()
         return render(request, "register.html", {'form': form})
+    
+# def login(request):
+#     return render(request, 'login.html')
