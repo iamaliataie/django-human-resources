@@ -44,6 +44,7 @@ class CandidateForm(forms.ModelForm):
                 }
             )
         )
+    
     job = Uppercase(
         label="Job Code",
         min_length=5,
