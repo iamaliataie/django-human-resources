@@ -163,6 +163,7 @@ class CandidateForm(forms.ModelForm):
             }
         )
     )
+    
     position = forms.CharField(
         widget=forms.TextInput(
             attrs={
