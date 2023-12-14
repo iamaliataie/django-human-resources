@@ -78,6 +78,7 @@ class CandidateForm(forms.ModelForm):
     #     label="Age",
     #     widget=forms.NumberInput(attrs={'placeholder': 'Age'})
     # )
+    
     experience = forms.BooleanField(label='I have experience', required=False)
     messages = forms.CharField(
         label="About You",
