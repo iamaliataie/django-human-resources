@@ -263,13 +263,7 @@ class CandidateForm(forms.ModelForm):
         if Candidate.objects.filter(email=email).exists():
             raise forms.ValidationError('Email already exists')
         return email
-    
-    # def clean_age(self):
-    #     age = int(self.cleaned_data.get('age'))
-    #     if age < 20 or age > 50:
-    #         raise forms.ValidationError('Age must be between 20 and 50')
-    #     return age
-    
+
     def clean_resume(self):
         resume = self.cleaned_data.get('resume')
         if resume.content_type != 'application/pdf':
