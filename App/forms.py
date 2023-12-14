@@ -80,6 +80,7 @@ class CandidateForm(forms.ModelForm):
     # )
     
     experience = forms.BooleanField(label='I have experience', required=False)
+    
     messages = forms.CharField(
         label="About You",
         min_length=50,
