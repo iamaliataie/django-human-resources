@@ -4,7 +4,6 @@ from django.core.validators import RegexValidator, integer_validator
 from .models import Candidate, SMOKER
 
 
-
 class Uppercase(forms.CharField):
     def to_python(self, value):
         return value.upper()
