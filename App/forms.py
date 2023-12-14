@@ -74,12 +74,6 @@ class CandidateForm(forms.ModelForm):
             )
     )
     
-    # age = forms.IntegerField(
-    #     label="Age",
-    #     widget=forms.NumberInput(attrs={'placeholder': 'Age'})
-    # )
-    
-    
     messages = forms.CharField(
         label="About You",
         min_length=50,
