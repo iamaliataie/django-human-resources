@@ -96,6 +96,7 @@ class CandidateForm(forms.ModelForm):
             }
         )
     )
+    
     image = forms.FileField(
         label="Photo",
         widget=forms.ClearableFileInput(
