@@ -73,6 +73,7 @@ class CandidateForm(forms.ModelForm):
                 }
             )
     )
+    
     # age = forms.IntegerField(
     #     label="Age",
     #     widget=forms.NumberInput(attrs={'placeholder': 'Age'})
