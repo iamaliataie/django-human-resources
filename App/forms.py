@@ -258,10 +258,5 @@ class CandidateForm(forms.ModelForm):
             raise forms.ValidationError('Email already exists')
         return email
 
-    def clean_resume(self):
-        resume = self.cleaned_data.get('resume')
-        if resume.content_type != 'application/pdf':
-            raise forms.ValidationError('Resume must be PDF')
-        return resume
 
 
