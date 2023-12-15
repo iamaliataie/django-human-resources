@@ -252,11 +252,4 @@ class CandidateForm(forms.ModelForm):
             "smoker": forms.RadioSelect(choices=SMOKER),
             }
 
-    def clean_email(self):
-        email = self.cleaned_data.get('email')
-        if Candidate.objects.filter(email=email).exists():
-            raise forms.ValidationError('Email already exists')
-        return email
-
-
 
