@@ -74,7 +74,6 @@ class CandidateAdmin(admin.ModelAdmin):
             return None
     _.boolean = True
     
-    
     # function to set the color of the status text
     def status(self, obj):
         if obj.situation == 'Approved':
