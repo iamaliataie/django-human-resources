@@ -103,7 +103,6 @@ class CandidateForm(forms.ModelForm):
             }
         )
     )
-    
     course = forms.CharField(
         label="Course",
         widget=forms.TextInput(
