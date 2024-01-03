@@ -177,7 +177,6 @@ class CandidateForm(forms.ModelForm):
             ('Between  ($5000 and $7000)', 'Between  ($5000 and $7000)'),
             ('Between  ($7000 and $10000)', 'Between  ($7000 and $10000)'),
         )
-        
         GENDER = (
             ('M', 'Male'),
             ('F', 'Female'),
