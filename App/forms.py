@@ -8,6 +8,7 @@ class Uppercase(forms.CharField):
     def to_python(self, value):
         return value.upper()
 
+
 class Lowercase(forms.CharField):
     def to_python(self, value):
         return value.lower()
