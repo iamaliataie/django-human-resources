@@ -181,7 +181,6 @@ class CandidateForm(forms.ModelForm):
             ('M', 'Male'),
             ('F', 'Female'),
         )
-        
         widgets = {
             "birth":forms.DateInput(
                 attrs={
