@@ -56,7 +56,6 @@ class CandidateForm(forms.ModelForm):
                 }
             )
     )
-    
     email = Lowercase(
         label="Email Address",
         max_length=100,
