@@ -170,7 +170,6 @@ class CandidateForm(forms.ModelForm):
             'started_job': 'Started',
             'finished_job': 'Finished',
         }
-        
         SALARY = (
             ('', 'Salary expectation (month)'),
             ('Between  ($3000 and $4000)', 'Between  ($3000 and $4000)'),
