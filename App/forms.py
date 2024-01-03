@@ -72,7 +72,6 @@ class CandidateForm(forms.ModelForm):
                 }
             )
     )
-    
     messages = forms.CharField(
         label="About You",
         min_length=50,
