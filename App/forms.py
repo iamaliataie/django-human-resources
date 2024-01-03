@@ -254,7 +254,6 @@ class CandidateForm(forms.ModelForm):
         birth = self.cleaned_data.get('birth')
         now = date.today()
         age = (now.year - birth.year) - ((now.month, now.day) < (birth.month, birth.day))
-
         if age < 20:
             raise forms.ValidationError('Your age must be 20 at least')
         return birth
