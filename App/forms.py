@@ -112,7 +112,6 @@ class CandidateForm(forms.ModelForm):
             }
         )
     )
-    
     about_course = forms.CharField(
         label="About your college course",
         min_length=50,
