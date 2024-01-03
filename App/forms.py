@@ -126,7 +126,6 @@ class CandidateForm(forms.ModelForm):
             }
         )
     )
-    
     about_job = forms.CharField(
         label="About your job",
         min_length=50,
