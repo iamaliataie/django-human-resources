@@ -94,7 +94,6 @@ class CandidateForm(forms.ModelForm):
             }
         )
     )
-    
     institution = forms.CharField(
         label="Institution",
         widget=forms.TextInput(
