@@ -8,8 +8,9 @@ from .forms import CandidateForm
 
 class CandidateAdmin(admin.ModelAdmin):
     form = CandidateForm
-    
+
     readonly_fields = (
+        
         'created_on',
         'first_name',
         'last_name',
