@@ -12,7 +12,6 @@ class Lowercase(forms.CharField):
     def to_python(self, value):
         return value.lower()
 
-
 class CandidateForm(forms.ModelForm):
     
     first_name = forms.CharField(
