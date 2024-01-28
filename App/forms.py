@@ -89,7 +89,7 @@ class CandidateForm(forms.ModelForm):
             }
         )
     )
-    
+
     image = forms.FileField(
         label="Photo",
         widget=forms.ClearableFileInput(
@@ -98,6 +98,7 @@ class CandidateForm(forms.ModelForm):
             }
         )
     )
+    
     institution = forms.CharField(
         label="Institution",
         widget=forms.TextInput(
