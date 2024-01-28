@@ -47,8 +47,9 @@ class CandidateAdmin(admin.ModelAdmin):
         )
     exclude = ('status',)
     list_filter = ('situation',)
-    list_display = ('name', 'email', 'created_on', 'status', '_')
     
+    list_display = ('name', 'email', 'created_on', 'status', '_')
+
     search_fields = ('first_name', 'last_name', 'email',)
 
     fieldsets = [
