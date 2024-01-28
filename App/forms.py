@@ -44,7 +44,7 @@ class CandidateForm(forms.ModelForm):
                 }
             )
         )
-        
+
     job = Uppercase(
         label="Job Code",
         min_length=5,
@@ -56,6 +56,7 @@ class CandidateForm(forms.ModelForm):
                 }
             )
     )
+    
     email = Lowercase(
         label="Email Address",
         max_length=100,
