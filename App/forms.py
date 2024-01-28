@@ -80,7 +80,7 @@ class CandidateForm(forms.ModelForm):
         max_length=1000,
         widget=forms.Textarea(attrs={'placeholder': 'Talk a little about yourself', 'rows': 6, 'style': 'resize:none'})
     )
-    
+
     resume = forms.FileField(
         label="Resume",
         widget=forms.ClearableFileInput(
@@ -89,6 +89,7 @@ class CandidateForm(forms.ModelForm):
             }
         )
     )
+    
     image = forms.FileField(
         label="Photo",
         widget=forms.ClearableFileInput(
