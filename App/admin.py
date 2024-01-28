@@ -45,8 +45,9 @@ class CandidateAdmin(admin.ModelAdmin):
         'remote',
         'travel',
         )
+        
     exclude = ('status',)
-    
+
     list_filter = ('situation',)
 
     list_display = ('name', 'email', 'created_on', 'status', '_')
