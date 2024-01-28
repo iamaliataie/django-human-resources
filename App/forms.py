@@ -98,7 +98,7 @@ class CandidateForm(forms.ModelForm):
             }
         )
     )
-    
+
     institution = forms.CharField(
         label="Institution",
         widget=forms.TextInput(
@@ -108,6 +108,7 @@ class CandidateForm(forms.ModelForm):
             }
         )
     )
+    
     course = forms.CharField(
         label="Course",
         widget=forms.TextInput(
