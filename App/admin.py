@@ -1,13 +1,13 @@
 from django.contrib import admin
 from django.utils.html import format_html
-
 from .models import Candidate
 from .forms import CandidateForm
 
-# Register your models here.
 
 class CandidateAdmin(admin.ModelAdmin):
+
     form = CandidateForm
+
     readonly_fields = (
         'created_on',
         'first_name',
@@ -45,10 +45,15 @@ class CandidateAdmin(admin.ModelAdmin):
         'remote',
         'travel',
         )
+
     exclude = ('status',)
+
     list_filter = ('situation',)
+
     list_display = ('name', 'email', 'created_on', 'status', '_')
+
     search_fields = ('first_name', 'last_name', 'email',)
+
     fieldsets = [
         ('PERSONAL', {'fields': ['first_name', 'last_name', 'birth' ,'email', 'phone', 'gender', 'job', 'personality', 'smoker', 'image', 'resume', 'messages',]}),
         ('Skills', {'fields': ['languages', 'frameworks', 'databases', 'libraries', 'mobile', 'other',]}),

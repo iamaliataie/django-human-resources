@@ -8,11 +8,9 @@ class Uppercase(forms.CharField):
     def to_python(self, value):
         return value.upper()
 
-
 class Lowercase(forms.CharField):
     def to_python(self, value):
         return value.lower()
-
 
 class CandidateForm(forms.ModelForm):
     
@@ -29,6 +27,7 @@ class CandidateForm(forms.ModelForm):
                 }
             )
     )
+
     last_name = forms.CharField(
         label="Last Name",
         max_length=100,
@@ -45,6 +44,7 @@ class CandidateForm(forms.ModelForm):
                 }
             )
         )
+
     job = Uppercase(
         label="Job Code",
         min_length=5,
@@ -56,6 +56,7 @@ class CandidateForm(forms.ModelForm):
                 }
             )
     )
+
     email = Lowercase(
         label="Email Address",
         max_length=100,
@@ -72,12 +73,14 @@ class CandidateForm(forms.ModelForm):
                 }
             )
     )
+
     messages = forms.CharField(
         label="About You",
         min_length=50,
         max_length=1000,
         widget=forms.Textarea(attrs={'placeholder': 'Talk a little about yourself', 'rows': 6, 'style': 'resize:none'})
     )
+
     resume = forms.FileField(
         label="Resume",
         widget=forms.ClearableFileInput(
@@ -86,6 +89,7 @@ class CandidateForm(forms.ModelForm):
             }
         )
     )
+
     image = forms.FileField(
         label="Photo",
         widget=forms.ClearableFileInput(
@@ -94,6 +98,7 @@ class CandidateForm(forms.ModelForm):
             }
         )
     )
+
     institution = forms.CharField(
         label="Institution",
         widget=forms.TextInput(
@@ -103,6 +108,7 @@ class CandidateForm(forms.ModelForm):
             }
         )
     )
+
     course = forms.CharField(
         label="Course",
         widget=forms.TextInput(
@@ -112,6 +118,7 @@ class CandidateForm(forms.ModelForm):
             }
         )
     )
+
     about_course = forms.CharField(
         label="About your college course",
         min_length=50,
@@ -125,6 +132,7 @@ class CandidateForm(forms.ModelForm):
             }
         )
     )
+    
     about_job = forms.CharField(
         label="About your job",
         min_length=50,
