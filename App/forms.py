@@ -108,7 +108,7 @@ class CandidateForm(forms.ModelForm):
             }
         )
     )
-    
+
     course = forms.CharField(
         label="Course",
         widget=forms.TextInput(
@@ -118,6 +118,7 @@ class CandidateForm(forms.ModelForm):
             }
         )
     )
+    
     about_course = forms.CharField(
         label="About your college course",
         min_length=50,
