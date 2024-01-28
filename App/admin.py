@@ -4,11 +4,10 @@ from django.utils.html import format_html
 from .models import Candidate
 from .forms import CandidateForm
 
-# Register your models here.
 
 class CandidateAdmin(admin.ModelAdmin):
     form = CandidateForm
-    
+
     readonly_fields = (
         'created_on',
         'first_name',
