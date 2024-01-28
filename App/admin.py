@@ -6,6 +6,7 @@ from .forms import CandidateForm
 
 
 class CandidateAdmin(admin.ModelAdmin):
+    
     form = CandidateForm
 
     readonly_fields = (
