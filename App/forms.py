@@ -56,7 +56,7 @@ class CandidateForm(forms.ModelForm):
                 }
             )
     )
-    
+
     email = Lowercase(
         label="Email Address",
         max_length=100,
@@ -73,6 +73,7 @@ class CandidateForm(forms.ModelForm):
                 }
             )
     )
+    
     messages = forms.CharField(
         label="About You",
         min_length=50,
