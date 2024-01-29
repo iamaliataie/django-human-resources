@@ -60,7 +60,6 @@ MOBILE = (
     ('Xamarin', 'Xamarin'),
     ('Other', 'Other'),
 )
-
 OTHER = (
     ('UML', 'UML'),
     ('SQL', 'SQL'),
