@@ -171,13 +171,14 @@ class CandidateForm(forms.ModelForm):
     remote = forms.BooleanField(label="I agree to work remotely", required=False)
 
     travel = forms.BooleanField(label="I am available to travel", required=False)
-    
+
     experience = forms.BooleanField(label='I have experience', required=False)
 
     class Meta:
         model = Candidate
         # fields = ["first_name", "last_name", "job", "email", 'age', "phone", "messages"]
         exclude = ('situation', 'created_on')
+        
         labels = {
             'started_course': 'Started',
             'finished_course': 'Finished',
