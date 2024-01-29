@@ -167,8 +167,9 @@ class CandidateForm(forms.ModelForm):
     )
 
     employed = forms.BooleanField(label="I am employed", required=False)
-    
+
     remote = forms.BooleanField(label="I agree to work remotely", required=False)
+    
     travel = forms.BooleanField(label="I am available to travel", required=False)
     experience = forms.BooleanField(label='I have experience', required=False)
 
