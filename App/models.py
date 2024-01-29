@@ -8,7 +8,6 @@ SITUATION = (
     ('Approved', 'Approved'),
     ('Rejected', 'Rejected'),
 )
-
 PERSONALITY = (
     ('', 'Select a personality'),
     ('I am outgoing', 'I am outgoing'),
