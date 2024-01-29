@@ -8,7 +8,6 @@ SITUATION = (
     ('Approved', 'Approved'),
     ('Rejected', 'Rejected'),
 )
-
 PERSONALITY = (
     ('', 'Select a personality'),
     ('I am outgoing', 'I am outgoing'),
@@ -17,12 +16,10 @@ PERSONALITY = (
     ('I am discreet', 'I am discreet'),
     ('I am serious', 'I am serious'),
 )
-
 SMOKER = (
     ('1', 'Yes'),
     ('2', 'No'),
 )
-
 LANGUAGES = (
     ('Python', 'Python'),
     ('Javascript', 'Javascript'),
@@ -31,7 +28,6 @@ LANGUAGES = (
     ('Ruby', 'Ruby'),
     ('Other', 'Other'),
     )
-
 FRAMEWORKS = (
     ('React', 'React'),
     ('Vue', 'Vue'),
@@ -40,7 +36,6 @@ FRAMEWORKS = (
     ('RubyOnRails', 'RubyOnRails'),
     ('Other', 'Other'),
     )
-
 DATABASES = (
     ('Mysql', 'Mysql'),
     ('Posgresql', 'Posgresql'),
@@ -49,7 +44,6 @@ DATABASES = (
     ('Oracle', 'Oracle'),
     ('Other', 'Other'),
 )
-
 LIBRARIES = (
     ('Jquery', 'Jquery'),
     ('Chart.js', 'Chart.js'),
@@ -58,7 +52,6 @@ LIBRARIES = (
     ('Matplotlib', 'Matplotlib'),
     ('Other', 'Other'),
 )
-
 MOBILE = (
     ('React Native', 'React Native'),
     ('Kivy', 'Kivy'),
@@ -67,7 +60,6 @@ MOBILE = (
     ('Xamarin', 'Xamarin'),
     ('Other', 'Other'),
 )
-
 OTHER = (
     ('UML', 'UML'),
     ('SQL', 'SQL'),
@@ -76,14 +68,12 @@ OTHER = (
     ('Pandas', 'Pandas'),
     ('Other', 'Other'),
 )
- 
 STATUS_COURSE = (
     ('', 'Select your status'),
     ('I am studying','I am studying'),
     ('I took a break','I took a break'),
     ('Completed','Completed'),
 )
-
 
 class Candidate(models.Model):
     first_name = models.CharField(max_length=255)
@@ -107,7 +97,6 @@ class Candidate(models.Model):
     libraries = MultiSelectField(choices=LIBRARIES, default='', max_length=20)
     mobile = MultiSelectField(choices=MOBILE, default='', max_length=20)
     other = MultiSelectField(choices=OTHER, default='', max_length=20)
-
     # EDUCATION - 3
     institution = models.CharField(max_length=50)
     course = models.CharField(max_length=50)
@@ -115,7 +104,6 @@ class Candidate(models.Model):
     finished_course = models.DateField(auto_now_add=False, auto_now=False)
     about_course = models.TextField()
     status_course = models.CharField(max_length=50, null=True, choices=STATUS_COURSE)
-
     # PROFESSIONAL - 4
     company = models.CharField(max_length=100)
     position = models.CharField(max_length=50)
@@ -125,7 +113,6 @@ class Candidate(models.Model):
     employed = models.BooleanField(null=True, verbose_name="I am employed")
     remote = models.BooleanField(null=True, verbose_name="I agree to work remotely")
     travel = models.BooleanField(null=True, verbose_name="I am available to travel")
-
     situation = models.CharField(max_length=20, default='Pending', choices=SITUATION, null=True,)
     created_on = models.DateTimeField(auto_now_add=True)
     
