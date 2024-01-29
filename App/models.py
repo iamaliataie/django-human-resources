@@ -16,7 +16,6 @@ PERSONALITY = (
     ('I am discreet', 'I am discreet'),
     ('I am serious', 'I am serious'),
 )
-
 SMOKER = (
     ('1', 'Yes'),
     ('2', 'No'),
