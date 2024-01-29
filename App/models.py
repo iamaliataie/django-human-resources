@@ -44,7 +44,6 @@ DATABASES = (
     ('Oracle', 'Oracle'),
     ('Other', 'Other'),
 )
-
 LIBRARIES = (
     ('Jquery', 'Jquery'),
     ('Chart.js', 'Chart.js'),
