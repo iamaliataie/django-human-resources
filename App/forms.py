@@ -146,7 +146,7 @@ class CandidateForm(forms.ModelForm):
             }
         )
     )
-    
+
     company = forms.CharField(
         label="Last company",
         widget=forms.TextInput(
@@ -156,6 +156,7 @@ class CandidateForm(forms.ModelForm):
             }
         )
     )
+    
     position = forms.CharField(
         widget=forms.TextInput(
             attrs={
