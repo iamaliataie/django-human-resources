@@ -185,7 +185,7 @@ class CandidateForm(forms.ModelForm):
             'started_job': 'Started',
             'finished_job': 'Finished',
         }
-        
+
         SALARY = (
             ('', 'Salary expectation (month)'),
             ('Between  ($3000 and $4000)', 'Between  ($3000 and $4000)'),
@@ -193,6 +193,7 @@ class CandidateForm(forms.ModelForm):
             ('Between  ($5000 and $7000)', 'Between  ($5000 and $7000)'),
             ('Between  ($7000 and $10000)', 'Between  ($7000 and $10000)'),
         )
+        
         GENDER = (
             ('M', 'Male'),
             ('F', 'Female'),
