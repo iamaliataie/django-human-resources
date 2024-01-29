@@ -104,7 +104,6 @@ class Candidate(models.Model):
     finished_course = models.DateField(auto_now_add=False, auto_now=False)
     about_course = models.TextField()
     status_course = models.CharField(max_length=50, null=True, choices=STATUS_COURSE)
-
     # PROFESSIONAL - 4
     company = models.CharField(max_length=100)
     position = models.CharField(max_length=50)
