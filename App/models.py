@@ -97,7 +97,6 @@ class Candidate(models.Model):
     libraries = MultiSelectField(choices=LIBRARIES, default='', max_length=20)
     mobile = MultiSelectField(choices=MOBILE, default='', max_length=20)
     other = MultiSelectField(choices=OTHER, default='', max_length=20)
-
     # EDUCATION - 3
     institution = models.CharField(max_length=50)
     course = models.CharField(max_length=50)
