@@ -52,7 +52,6 @@ LIBRARIES = (
     ('Matplotlib', 'Matplotlib'),
     ('Other', 'Other'),
 )
-
 MOBILE = (
     ('React Native', 'React Native'),
     ('Kivy', 'Kivy'),
