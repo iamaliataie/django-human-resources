@@ -68,7 +68,6 @@ OTHER = (
     ('Pandas', 'Pandas'),
     ('Other', 'Other'),
 )
- 
 STATUS_COURSE = (
     ('', 'Select your status'),
     ('I am studying','I am studying'),
