@@ -115,7 +115,6 @@ class Candidate(models.Model):
     employed = models.BooleanField(null=True, verbose_name="I am employed")
     remote = models.BooleanField(null=True, verbose_name="I agree to work remotely")
     travel = models.BooleanField(null=True, verbose_name="I am available to travel")
-
     situation = models.CharField(max_length=20, default='Pending', choices=SITUATION, null=True,)
     created_on = models.DateTimeField(auto_now_add=True)
     
